@@ -8,6 +8,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     Button btOk;
     CheckBox cb1, cb2, cb3;
     RadioGroup rg;
+    Spinner judul;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         cb1 = (CheckBox) findViewById(R.id.checkBoxbk);
         cb2 = (CheckBox) findViewById(R.id.checkBoxkm);
         cb3 = (CheckBox) findViewById(R.id.checkBoxmj);
+        judul = (Spinner) findViewById(R.id.spinnerJudul);
 
         btOk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
         if (isValid()) ;
         String input = etinput.getText().toString();
         tvHasil.setText("Layanan Buku : " + hasil + " " + hasil2);
+        tvHasil2.setText(("Judul Buku : " +
+                judul.getSelectedItem().toString()));
         tvhasil3.setText("Komentar dan saran : " + input);
     }
 
